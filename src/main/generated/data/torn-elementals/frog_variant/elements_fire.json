@@ -1,0 +1,12 @@
+{
+  "asset_id": "torn-elementals:entity/frog/fire",
+  "spawn_conditions": [
+    {
+      "condition": {
+        "type": "minecraft:structure",
+        "structures": "#minecraft:ruined_portal"
+      },
+      "priority": 1
+    }
+  ]
+}

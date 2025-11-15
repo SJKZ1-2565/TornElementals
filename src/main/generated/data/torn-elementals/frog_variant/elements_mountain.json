@@ -1,0 +1,12 @@
+{
+  "asset_id": "torn-elementals:entity/frog/mountain",
+  "spawn_conditions": [
+    {
+      "condition": {
+        "type": "minecraft:structure",
+        "structures": "#minecraft:mineshaft"
+      },
+      "priority": 1
+    }
+  ]
+}

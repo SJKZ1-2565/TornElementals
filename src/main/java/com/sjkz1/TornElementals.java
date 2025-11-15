@@ -1,24 +1,31 @@
 package com.sjkz1;
 
 import net.fabricmc.api.ModInitializer;
-
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BiomeTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.entity.animal.frog.FrogVariant;
+import net.minecraft.world.level.levelgen.structure.Structure;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class TornElementals implements ModInitializer {
-	public static final String MOD_ID = "torn-elementals";
+    public static final String MOD_ID = "torn-elementals";
+    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+    public static final TagKey<Structure> IS_IGLOO = TagKey.create(Registries.STRUCTURE, TornElementals.id("is_igloo"));
+    public static final TagKey<FrogVariant> UNRIDEABLE_VARIANT = TagKey.create(Registries.FROG_VARIANT, TornElementals.id("unrideable_variant"));
 
-	// This logger is used to write text to the console and the log file.
-	// It is considered best practice to use your mod id as the logger's name.
-	// That way, it's clear which mod wrote info, warnings, and errors.
-	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+    public static ResourceLocation id(String string) {
+        return ResourceLocation.fromNamespaceAndPath(MOD_ID, string);
+    }
 
-	@Override
-	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
+    @Override
+    public void onInitialize() {
 
-		LOGGER.info("Hello Fabric world!");
-	}
+    }
 }

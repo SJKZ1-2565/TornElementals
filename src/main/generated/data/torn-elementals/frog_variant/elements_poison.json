@@ -1,0 +1,12 @@
+{
+  "asset_id": "torn-elementals:entity/frog/poison",
+  "spawn_conditions": [
+    {
+      "condition": {
+        "type": "minecraft:structure",
+        "structures": "#minecraft:cats_spawn_as_black"
+      },
+      "priority": 1
+    }
+  ]
+}
