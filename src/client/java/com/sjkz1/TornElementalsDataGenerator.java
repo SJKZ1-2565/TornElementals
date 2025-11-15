@@ -25,7 +25,7 @@ public class TornElementalsDataGenerator implements DataGeneratorEntrypoint {
 
     @Override
     public void buildRegistry(RegistrySetBuilder registryBuilder) {
-        registryBuilder.add(Registries.FROG_VARIANT, AnimalElements::bootstrap);
+        registryBuilder.add(Registries.FROG_VARIANT, AnimalElements::frogVariantBootstrap);
     }
 
     private static class DynamicRegistryProvider extends FabricDynamicRegistryProvider {

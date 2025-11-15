@@ -3,7 +3,8 @@
   "package": "com.sjkz1.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "FrogMixin"
+    "FrogMixin",
+    "ZombieMixin"
   ],
   "injectors": {
     "defaultRequire": 1
