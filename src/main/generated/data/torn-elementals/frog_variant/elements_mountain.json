@@ -4,7 +4,7 @@
     {
       "condition": {
         "type": "minecraft:structure",
-        "structures": "#minecraft:on_desert_village_maps"
+        "structures": "#minecraft:mineshaft"
       },
       "priority": 1
     }
