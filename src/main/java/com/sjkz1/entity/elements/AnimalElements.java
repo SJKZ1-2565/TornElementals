@@ -19,7 +19,7 @@ public class AnimalElements {
     public static final ResourceKey<FrogVariant> ELEMENTS_POISON_FROG = ResourceKey.create(Registries.FROG_VARIANT, TornElementals.id("elements_poison"));
 
     public static void frogVariantBootstrap(BootstrapContext<FrogVariant> context) {
-        HolderSet<Structure> mineShaftStructure = context.lookup(Registries.STRUCTURE).getOrThrow(StructureTags.ON_DESERT_VILLAGE_MAPS);
+        HolderSet<Structure> mineShaftStructure = context.lookup(Registries.STRUCTURE).getOrThrow(StructureTags.MINESHAFT);
         HolderSet<Structure> iglooStructure = context.lookup(Registries.STRUCTURE).getOrThrow(TornElementals.IS_IGLOO);
         HolderSet<Structure> ruinedPortalStructure = context.lookup(Registries.STRUCTURE).getOrThrow(StructureTags.RUINED_PORTAL);
         HolderSet<Structure> hutStructure = context.lookup(Registries.STRUCTURE).getOrThrow(StructureTags.CATS_SPAWN_AS_BLACK);
