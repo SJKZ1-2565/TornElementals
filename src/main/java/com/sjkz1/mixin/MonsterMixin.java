@@ -3,17 +3,16 @@ package com.sjkz1.mixin;
 import com.sjkz1.TornElementals;
 import net.minecraft.world.entity.ai.goal.AvoidEntityGoal;
 import net.minecraft.world.entity.animal.frog.Frog;
-import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.monster.Zombie;
+import net.minecraft.world.entity.monster.*;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(Zombie.class)
-public class ZombieMixin extends Monster {
+@Mixin({Zombie.class, Spider.class, Creeper.class, AbstractSkeleton.class, AbstractIllager.class})
+public class MonsterMixin extends Monster {
 
-    protected ZombieMixin() {
+    protected MonsterMixin() {
         super(null, null);
     }
 
