@@ -15,6 +15,7 @@ public class TornElementals implements ModInitializer {
     public static final TagKey<Structure> IS_IGLOO = TagKey.create(Registries.STRUCTURE, TornElementals.id("is_igloo"));
     public static final TagKey<FrogVariant> UNRIDEABLE_VARIANT = TagKey.create(Registries.FROG_VARIANT, TornElementals.id("unrideable_variant"));
     public static final TagKey<FrogVariant> SCARED_HOSTILE_MOB_FROG = TagKey.create(Registries.FROG_VARIANT, TornElementals.id("scared_hostile_mob_frog"));
+    public static final TagKey<FrogVariant> SPEED_FROG = TagKey.create(Registries.FROG_VARIANT, TornElementals.id("speed_frog"));
 
     public static ResourceLocation id(String string) {
         return ResourceLocation.fromNamespaceAndPath(MOD_ID, string);

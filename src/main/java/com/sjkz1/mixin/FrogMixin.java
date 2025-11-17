@@ -3,15 +3,19 @@ package com.sjkz1.mixin;
 import com.sjkz1.TornElementals;
 import net.minecraft.core.Holder;
 import net.minecraft.util.Mth;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.frog.Frog;
 import net.minecraft.world.entity.animal.frog.FrogVariant;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
@@ -19,6 +23,9 @@ import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Frog.class)
 public abstract class FrogMixin extends Animal {
@@ -107,6 +114,16 @@ public abstract class FrogMixin extends Animal {
             player.setYRot(this.getYRot());
             player.setXRot(this.getXRot());
             player.startRiding(this);
+        }
+    }
+
+    @Inject(method = "finalizeSpawn", at = @At("HEAD"))
+    public void setFrogAttributes$finalizeSpawn(ServerLevelAccessor serverLevelAccessor, DifficultyInstance difficultyInstance, EntitySpawnReason entitySpawnReason, SpawnGroupData spawnGroupData, CallbackInfoReturnable<SpawnGroupData> cir) {
+        if (this.getVariant().is(TornElementals.SPEED_FROG)) {
+            var movementSpeed = this.getAttribute(Attributes.MOVEMENT_SPEED);
+            if (movementSpeed != null) {
+                movementSpeed.setBaseValue(3.0D);//TODO This value can be config
+            }
         }
     }
 }

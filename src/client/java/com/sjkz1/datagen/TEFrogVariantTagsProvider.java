@@ -22,5 +22,6 @@ public class TEFrogVariantTagsProvider extends FabricTagProvider<FrogVariant> {
     protected void addTags(HolderLookup.Provider provider) {
         this.builder(TornElementals.UNRIDEABLE_VARIANT).add(FrogVariants.TEMPERATE).add(FrogVariants.COLD).add(FrogVariants.WARM);
         this.builder(TornElementals.SCARED_HOSTILE_MOB_FROG).add(AnimalElements.ELEMENTS_POISON_FROG);
+        this.builder(TornElementals.SPEED_FROG).add(AnimalElements.ELEMENTS_SNOW_FROG);
     }
 }
