@@ -19,7 +19,10 @@ repositories {
 }
 
 loom {
-	splitEnvironmentSourceSets()
+
+    accessWidenerPath = file("src/main/resources/torn-elementals.classtweaker")
+
+    splitEnvironmentSourceSets()
 
 	mods {
 		"torn-elementals" {
@@ -27,7 +30,6 @@ loom {
 			sourceSet sourceSets.client
 		}
 	}
-
 }
 
 fabricApi {
