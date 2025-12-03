@@ -21,6 +21,7 @@ public class TornElementalsDataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(DynamicRegistryProvider::new);
         pack.addProvider(TEStructureTagsProvider::new);
         pack.addProvider(TEFrogVariantTagsProvider::new);
+//        pack.addProvider(TEEntityLootableProvider::new);
     }
 
     @Override
